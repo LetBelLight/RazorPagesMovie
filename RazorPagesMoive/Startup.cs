@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMoive.Models;
+using RazorPagesMovie.Models;
 
-namespace RazorPagesMoive
+namespace RazorPagesMovie
 {
     public class Startup
     {
@@ -36,8 +36,8 @@ namespace RazorPagesMoive
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<RazorPagesMoiveContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMoiveContext")));
+            services.AddDbContext<RazorPagesMovieContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

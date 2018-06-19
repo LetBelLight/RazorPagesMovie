@@ -2,15 +2,15 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
-using RazorPagesMoive.Models;
+using RazorPagesMovie.Models;
 namespace RazorPagesMovie.Models
 {
     public static class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new RazorPagesMoiveContext(
-            serviceProvider.GetRequiredService<DbContextOptions<RazorPagesMoiveContext>>()))
+            using (var context = new RazorPagesMovieContext(
+            serviceProvider.GetRequiredService<DbContextOptions<RazorPagesMovieContext>>()))
             {
                 // Look for any movies.
                 if (context.Movie.Any())

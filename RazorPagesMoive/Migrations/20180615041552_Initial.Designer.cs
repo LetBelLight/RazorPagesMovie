@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RazorPagesMoive.Models;
+using RazorPagesMovie.Models;
 
-namespace RazorPagesMoive.Migrations
+namespace RazorPagesMovie.Migrations
 {
-    [DbContext(typeof(RazorPagesMoiveContext))]
+    [DbContext(typeof(RazorPagesMovieContext))]
     [Migration("20180615041552_Initial")]
     partial class Initial
     {

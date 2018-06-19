@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie.Models;
 
-namespace RazorPagesMoive.Models
+namespace RazorPagesMovie.Models
 {
-    public class RazorPagesMoiveContext : DbContext
+    public class RazorPagesMovieContext : DbContext
     {
-        public RazorPagesMoiveContext (DbContextOptions<RazorPagesMoiveContext> options)
+        public RazorPagesMovieContext (DbContextOptions<RazorPagesMovieContext> options)
             : base(options)
         {
         }
 
         public DbSet<RazorPagesMovie.Models.Movie> Movie { get; set; }
+        public DbSet<Schedule> Schedule { get; set; }
     }
 }

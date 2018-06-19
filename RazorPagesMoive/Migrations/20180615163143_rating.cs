@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RazorPagesMoive.Migrations
+namespace RazorPagesMovie.Migrations
 {
     public partial class rating : Migration
     {

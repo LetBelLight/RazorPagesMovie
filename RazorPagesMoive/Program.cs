@@ -9,10 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RazorPagesMovie.Models;
-using RazorPagesMoive.Models;
+using RazorPagesMovie.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace RazorPagesMoive
+namespace RazorPagesMovie
 {
     public class Program
     {
@@ -24,7 +24,7 @@ namespace RazorPagesMoive
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<RazorPagesMoiveContext>();
+                    var context = services.GetRequiredService<RazorPagesMovieContext>();
                     // requires using Microsoft.EntityFrameworkCore;
                     context.Database.Migrate();
                     // Requires using RazorPagesMovie.Models;

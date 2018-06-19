@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RazorPagesMoive.Models;
+using RazorPagesMovie.Models;
 
-namespace RazorPagesMoive.Migrations
+namespace RazorPagesMovie.Migrations
 {
-    [DbContext(typeof(RazorPagesMoiveContext))]
-    partial class RazorPagesMoiveContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(RazorPagesMovieContext))]
+    partial class RazorPagesMovieContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -25,20 +25,49 @@ namespace RazorPagesMoive.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Genre");
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Rating");
+                    b.Property<string>("Rating")
+                        .IsRequired()
+                        .HasMaxLength(5);
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
                     b.HasKey("ID");
 
                     b.ToTable("Movie");
+                });
+
+            modelBuilder.Entity("RazorPagesMovie.Models.Schedule", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("PrivateSchedule");
+
+                    b.Property<long>("PrivateScheduleSize");
+
+                    b.Property<string>("PublicSchedule");
+
+                    b.Property<long>("PublicScheduleSize");
+
+                    b.Property<string>("Title");
+
+                    b.Property<DateTime>("UploadDT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Schedule");
                 });
 #pragma warning restore 612, 618
         }
